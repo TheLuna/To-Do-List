@@ -1,18 +1,80 @@
-body{
-    background-color:#ecf0f1;
-    color:#ffffff;
-    text-shadow: -1px 0 #2c3e50, 0 1px #2c3e50, 1px 0 #2c3e50, 0 -1px #2c3e50; 
-    font-size: 35px;
-    padding-left: 30px;
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+body, 
+html {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
 }
 
-.form,
-.greetings{
-    display: none;
+html {
+    background: #333333;
 }
 
-.showing{
-    display: block;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+body {
+    background-size: cover;
+    background-position: center center;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 0.5s;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+input {
+    background: none;
+    appearance: none;
+    border: 0;
+    font-size: 22px;
+    color: white;
+    border-bottom: 2px solid white;
+}
+  
+input::placeholder {
+    color: white;
+}
+  
+input:focus,
+input:active {
+    outline: none;
+}
+  
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 50px;
+}
+  
+/* center.css */
+.center {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+  
+.center .js-form input::placeholder {
+    color: white;
+    opacity: 0.7;
+}
+  
+.center .name {
+    font-size: 36px;
+    margin-bottom: 30px;
 }
 
 @keyframes fadeIn{
@@ -24,6 +86,12 @@ body{
     }
 }
 
+/* clock.css */
+.js-clock {
+    font-size: 10em;
+}
+
+/* bg */
 .bgImage{
     position: absolute;
     top:0;
@@ -32,4 +100,44 @@ body{
     height:100%;
     z-index:-1;
     animation: fadeIn .5s linear;
+    opacity: 0.35;
+    filter: alpha(opacity=35);
+}
+
+/* greeting */
+.js-form,
+.js-greetings{
+    display: none;
+}
+
+.showing{
+    display: block;
+}
+
+/* todo list */
+.js-toDoList {
+    margin-bottom: 20px;
+}
+
+.js-toDoList li {
+    font-size: 22px;
+}
+
+.toDoDelBtn {
+    margin-right: 10px;
+    cursor: pointer;
+    background: none;
+    appearance: none;
+    border: none;
+    transform: scale(1.5);
+    outline: none;
+}
+
+/* weather */
+.js-weather {
+    position: absolute;
+    font-style: italic;
+    font-size: 12px;
+    top: 25px;
+    right: 25px;
 }
